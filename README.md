@@ -1,6 +1,6 @@
 # swiftJsonConverter
 
-This project has been made to help on my job, in which I'm always converting this type of data.
+This project has been made to help in my job, in which I'm always converting these data stuctures.
 
 
 1 - How to start the API?
@@ -14,10 +14,20 @@ This project has been made to help on my job, in which I'm always converting thi
     
     Plain text example:
     - 1 : "name: Optional(\"Julio\")"
-    - 2 : "age: Optional(\"34\")"
+    - 2 : "age: Optional(\"25\")"
     - 3 : "person.location.state: Optional(\"NY\")"
     - 4 : "person.location.country: Optional(\"US\")"
-    - 5 : "person.document: Optional(\"1234ABCD\")"
-    - 6 : "customer.phone: Optional(\"+55 99800-1234\")"
+    - 5 : "comment: Optional(\"Nice guy\")"
 
-    
+    Response example:
+    {
+      "name": "Julio",
+      "age": "25",
+      "person": {
+        "location": {
+          "state": "NY",
+          "country": "US"
+         }
+       },
+       "comment": "Nice guy"
+    }
