@@ -45,21 +45,26 @@ class Converter {
                     //Close Curly Brackets of previous line
                     if(keysArray[counter-1].length > keysArray[counter].length) {
                         for(let i = 0; i < (keysArray[counter-1].length - keysArray[counter].length); i++) {
-                                finalJson += `},`;
+                                finalJson += `}`;
                         }
-                    } else {
-                        finalJson += `,`;
-                    }
-    
+                    } 
+                    finalJson += `,`;
+
                     //print line elements
                     finalJson = this.printJsonSingleLine(parseInt(singleKey), counter, keysArray, valuesArray, finalJson);
                     prevLineStartingElem = parseInt(singleKey);
                     break;
                 }
             }
+
+            //For the last line -> Check remaining brackets to close
+            if(counter+1 == keysArray.length) {
+                for(var element in keysArray[counter]) {
+                    finalJson += `}`
+                }
+            }
         }
     
-        finalJson += `}`;
         let objJson = JSON.parse(finalJson);
         return JSON.parse(finalJson);
     }
